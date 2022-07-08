@@ -14,6 +14,7 @@ export {
   LegendItemSelection,
   LegendItemSelectionOptions,
 } from './service/legendItemSelection';
+export { FisheyeFocus, FisheyeFocusOptions } from './service/fisheyeFocus';
 export {
   HighlightSelection,
   HighlightSelectionOptions,
@@ -25,4 +26,5 @@ export {
 export { Tooltip, TooltipOptions } from './transformer/tooltip';
 export { Plot, PlotOptions } from './transformer/plot';
 export { SetItemState, SetItemStateOptions } from './transformer/setItemState';
-export { FisheyeFocus, FisheyeFocusOptions } from './service/fisheyeFocus';
+export { Cursor, CursorOptions } from './transformer/cursor';
+export { Mask, MaskOptions } from './transformer/mask';

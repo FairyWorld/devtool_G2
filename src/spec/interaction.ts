@@ -1,5 +1,5 @@
 import { InteractionComponent } from '../runtime';
-import { TooltipAction } from './action';
+import { TooltipAction, MaskAction } from './action';
 import { FisheyeCoordinate } from './coordinate';
 
 export type Interaction =
@@ -12,6 +12,8 @@ export type Interaction =
   | LegendHighlightInteraction
   | TooltipInteraction
   | FisheyeInteraction
+  | BrushInteraction
+  | BrushHighlightInteraction
   | CustomInteraction;
 
 export type InteractionTypes =
@@ -23,8 +25,18 @@ export type InteractionTypes =
   | 'legendActive'
   | 'legendHighlight'
   | 'tooltip'
+  | 'brush'
+  | 'brushHighlight'
   | 'fisheye'
   | InteractionComponent;
+
+export type BrushInteraction = Pick<MaskAction, 'maskType'> & {
+  type?: 'brush';
+};
+
+export type BrushHighlightInteraction = Pick<MaskAction, 'maskType'> & {
+  type?: 'brushHighlight';
+};
 
 export type ElementActiveInteraction = {
   type?: 'elementActive';
