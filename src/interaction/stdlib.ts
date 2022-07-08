@@ -9,6 +9,8 @@ import {
   LegendItemSelection,
   TriggerInfoSelection,
   SetItemState as SetItemStateAction,
+  Cursor as CursorAction,
+  Mask,
 } from './action';
 import { MousePosition, TouchPosition } from './interactor';
 import { InteractionLibrary } from './types';
@@ -25,6 +27,8 @@ export function createInteractionLibrary(): InteractionLibrary {
     'action.tooltip': Tooltip,
     'action.fisheyeFocus': FisheyeFocus,
     'action.plot': Plot,
+    'action.mask': Mask,
+    'action.cursor': CursorAction,
     'interactor.mousePosition': MousePosition,
     'interactor.touchPosition': TouchPosition,
   };

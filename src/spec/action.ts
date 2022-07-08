@@ -11,7 +11,9 @@ export type Action =
   | LegendItemSelectionAction
   | SetItemStateAction
   | PlotAction
-  | TooltipAction;
+  | CursorAction
+  | TooltipAction
+  | MaskAction;
 
 export type ActionTypes =
   | 'fisheyeFocus'
@@ -23,7 +25,9 @@ export type ActionTypes =
   | 'legendItemSelection'
   | 'setItemState'
   | 'plot'
+  | 'cursor'
   | 'tooltip'
+  | 'mask'
   | CustomAction;
 
 export type FisheyeFocusAction = {
@@ -45,6 +49,11 @@ export type HighlightElementAction = {
   color?: string;
 };
 
+export type CursorAction = {
+  type?: 'cursor';
+  cursor?: string;
+};
+
 export type PlotAction = {
   type?: 'plot';
 };
@@ -55,6 +64,11 @@ export type TooltipAction = {
   showCrosshairs?: boolean;
   crosshairs?: any;
   markers?: any;
+};
+
+export type MaskAction = {
+  type?: 'mask';
+  maskType?: 'polygon' | 'rect' | 'rectX' | 'rectY';
 };
 
 export type ElementSelectionAction = {
