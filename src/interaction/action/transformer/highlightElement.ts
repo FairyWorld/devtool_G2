@@ -23,10 +23,14 @@ export const HighlightElement: AC<HighlightOption> = (options) => {
 
     const data = selectedElements.map((d) => d.__data__);
 
-    selection
-      .selectAll('.element')
-      .style('visibility', data.length ? 'hidden' : 'visible');
-
+    selection.selectAll('.element').each(function () {
+      if (!this.style.originVisibility) {
+        this.style.originVisibility = this.style.visibility || 'visible';
+      }
+      this.style.visibility = data.length
+        ? 'hidden'
+        : this.style.originVisibility;
+    });
     const elements = selection.selectAll('.element').nodes();
     selectionLayer
       .selectAll('.highlight-element')
